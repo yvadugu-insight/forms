@@ -1,0 +1,30 @@
+
+<!-- handle required-->
+<div ng-switch="field.type">
+  <div ng-switch-when="checkbox">
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input id="{{field.name}}{{field.order}}" type="checkbox"> {{field.label}}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-switch-when="radio">
+    radio
+  </div>
+  <div ng-switch-when="select">
+    select box
+  </div>
+  <div ng-switch-default>
+    <!--all other input form elements fall under this group -->
+    <div class="form-group">
+      <label for="{{field.name}}{{field.order}}" class="col-sm-2 control-label">{{field.label}}</label>
+      <div class="col-sm-10">
+        <input type="{{field.type}}" class="form-control" id="{{field.name}}{{field.order}}" placeholder="{{field.placeHolder}}" ng-pattern="field.pattern" required>
+      </div>
+    </div>
+  </div>
+</div>

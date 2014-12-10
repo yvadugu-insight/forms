@@ -1,0 +1,10 @@
+<article>
+    <header>
+        <h3>{{formData.name}}</h3>
+    </header>
+    <form novalidate class="form-horizontal" role="form" name="{{formData.name}}" ng-submit="update(formData.model)">
+        <div ng-repeat="field in formData.fields">
+               <custom-form-field opts="{model: '{{formData.model}}.{{field.name}}',id:'{{field.name}}{{field.order}}'}" ></custom-form-field>
+        </div>
+    </form>
+</article>
